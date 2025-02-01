@@ -23,10 +23,8 @@ export function Player() {
   //   document.title = `Assistindo ${currentLesson.title}`;
   // }, [currentLesson]);
 
-  const { course, load } = useStore((store) => ({
-    course: store.course,
-    load: store.load,
-  }));
+  const course = useStore((store) => store.course);
+  const load = useStore((store) => store.load);
 
   const { currentLesson } = useCurrentLesson();
 

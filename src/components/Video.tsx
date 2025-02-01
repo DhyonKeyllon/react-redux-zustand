@@ -14,10 +14,9 @@ export function Video() {
   //   dispatch(next());
   // }
 
-  const { isLoading, next } = useStore((store) => ({
-    isLoading: store.isLoading,
-    next: store.next,
-  }));
+  const isLoading = useStore((store) => store.isLoading);
+  const next = useStore((store) => store.next);
+
   const { currentLesson } = useCurrentLesson();
 
   function handlePlayNext() {

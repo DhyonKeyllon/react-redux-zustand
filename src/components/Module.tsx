@@ -25,14 +25,9 @@ export function Module({ moduleIndex, title, amountOfLessons }: ModuleProps) {
 
   // const dispatch = useAppDispatch();
 
-  const { currentModuleIndex, currentLessonIndex, play } = useStore(
-    (store) => ({
-      lessons: store.course?.modules[moduleIndex].lessons,
-      currentModuleIndex: store.currentModuleIndex,
-      currentLessonIndex: store.currentLessonIndex,
-      play: store.play,
-    }),
-  );
+  const currentModuleIndex = useStore((state) => state.currentModuleIndex);
+  const currentLessonIndex = useStore((state) => state.currentLessonIndex);
+  const play = useStore((state) => state.play);
 
   const lessons = useStore(
     (state) => state.course?.modules[moduleIndex].lessons,
